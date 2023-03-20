@@ -1,0 +1,84 @@
+Exploratory Data Analysis using PostgreSQL
+
+1. Identify the top six weapon type used with the highest number of fatalities and injuries
+ 
+SELECT weapsubtype1,
+       count(nkill) AS total_killed,
+       count(nwound) AS total_wounded
+FROM attack
+WHERE attack.success = 1 AND (nkill > 0 OR nwound > 0) AND weapsubtype1 IS NOT NULL
+GROUP BY weapsubtype1
+ORDER BY (count(*)) DESC
+LIMIT 6;
+
+2. Identify the attack trend across the years
+
+SELECT event.year, count(*) AS success_count
+FROM event
+JOIN attack ON event.id = attack.event_id
+WHERE attack.success = 1
+GROUP BY event.year
+ORDER BY event.year;
+
+
+3. Identify the regions with the highest numbers of successful terrorist activities
+
+SELECT count(*) AS success_count, locations.region
+FROM locations
+JOIN attack ON locations.event_id = attack.event_id
+WHERE attack.success = 1 
+GROUP BY locations.region
+ORDER BY (count(*)) DESC;
+
+
+4. Identify the total number of successful attacks and total deaths
+
+SELECT count(success) AS successful_attack,
+       count(nkill) AS total_death
+FROM attack
+WHERE attack.success = 1;
+
+
+5. Who are the most prominent target types?
+
+SELECT count(*) AS target_count, targtype1
+FROM attack
+WHERE success = 1 AND targtype1 IS NOT NULL
+GROUP BY targtype1
+ORDER BY (count(*)) DESC
+LIMIT 6;
+
+
+6. What became of the hostages kidnapped after the attacks?
+
+SELECT count(*) AS hostage_count, hostkidoutcome
+FROM event
+WHERE ishostkid = 1 AND hostkidoutcome IS NOT NULL
+GROUP BY hostkidoutcome
+ORDER BY (count(*)) DESC;
+
+
+7. What was the most prominent attack type?
+
+SELECT count(*) AS type_count, attacktype1
+FROM attack
+WHERE success = 1 AND attacktype1 IS NOT NULL
+GROUP BY attacktype1
+ORDER BY (count(*)) DESC
+LIMIT 6;
+
+
+8. What are the top 5 countries with the most terrorist atacks and what are the number of people killed, kidnapped and wounded in said countries.
+
+SELECT locations.country,
+       count(attack.nkill) AS total_killed,
+       count(attack.nwound) AS total_wounded,
+       count(event.nhostkid) AS total_kidnapped
+FROM attack
+JOIN locations ON attack.event_id = locations.event_id
+JOIN event ON attack.event_id = event.id
+WHERE attack.success = 1 AND (attack.nkill > 0 OR attack.nwound > 0) AND locations.country IS NOT NULL
+GROUP BY locations.country
+ORDER BY (count(*)) DESC
+LIMIT 5;
+
