@@ -54,13 +54,14 @@ engine.dispose()
 ```
 After Importing the tables, I explored the data and asked several questions to gain from the data, 
 detect patterns, and establish connections between different variables. The questions asked were:
-1. Which continents have the highest and lowest successful terrorist activities?
-2. What are the most common target types of terrorist attacks?
-3. What are the most common attack types of terrorist attacks?
-4. What are the top five countries with the highest terrorist activities?
-5. What are the most commonly used weapon types in terrorist attacks?
-6. What is the hostage outcome in terrorist attacks?
-7. How have terrorist attacks evolved over the years?
+1. What are the top six weapon types used in successful terrorist attacks, based on the number of fatalities and injuries?
+2. What is the trend of successful terrorist attacks over the years?
+3. Which regions have the highest number of successful terrorist activities?
+4. How many successful attacks were carried out, and what was the total number of deaths?
+5. Which target types were the most prominent in successful terrorist attacks?
+6. What happened to the hostages who were kidnapped after the attacks?
+7. What was the most common attack type in successful terrorist attacks?
+8. Which countries had the most terrorist attacks, and what were the number of fatalities, kidnappings, and injuries in those countries?
 
 The solutions can be found here
 
