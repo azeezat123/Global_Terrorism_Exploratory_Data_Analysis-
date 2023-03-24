@@ -63,7 +63,7 @@ detect patterns, and establish connections between different variables. The ques
 7. What was the most common attack type in successful terrorist attacks?
 8. Which countries had the most terrorist attacks, and what were the number of fatalities, kidnappings, and injuries in those countries?
 
-The solutions can be found here
+The solutions can be found [here](PostgreSQL-Analysis-Solution.md)
 
 ***
 
