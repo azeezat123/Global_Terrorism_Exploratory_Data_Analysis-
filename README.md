@@ -68,6 +68,6 @@ The solutions can be found [here](PostgreSQL-Analysis-Solution.md)
 ***
 
 ## Data Visualizations
-After analyzing the data in PostgreSQL, the views were imported into PowerBI to create to visualizations to better understand the data and identify trends and patterns. The dashboard was designed to answer the questions posed during the analysis phase.
+After analyzing the data in PostgreSQL, the views were imported into PowerBI to create visualizations to better understand the data and identify trends and patterns. The dashboard was designed to answer the questions posed during the analysis phase.
 
 ![Global Terrorism Dashboard image, added in the Markdown.](global-terrorism-dashboard.jpg) 
