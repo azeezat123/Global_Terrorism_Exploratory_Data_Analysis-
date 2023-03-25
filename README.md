@@ -12,7 +12,7 @@ The following tools were used for this project:
 ***
 
 ## Data Cleaning
-The dataset used for the analysis contained 181,692 rows and 135 columns. The data cleaning process was done on **Excel**, where columns not necessary for the analysis were dropped, negative values less than 1 were replaced with null values, duplicates were removed, and missing values were filled.
+The dataset used for the analysis contained 181,692 rows and 135 columns. The data cleaning process was done on **Excel**, where columns not necessary for the analysis were dropped, negative values less than 0 were replaced with null values, duplicates were removed, and missing values were filled.
 
 ***
 
